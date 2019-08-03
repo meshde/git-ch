@@ -1,0 +1,19 @@
+{
+  "name": "pty-xterm-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo --dir ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-pty": "^0.8.1",
+    "xterm": "^3.14.5"
+  },
+  "devDependencies": {
+    "budo": "^11.6.3"
+  }
+}
