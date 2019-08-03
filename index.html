@@ -1,14 +1,33 @@
 <html>
-	<head>
-		<link rel="stylesheet" href="node_modules/xterm/dist/xterm.css" />
-		<script src="node_modules/xterm/dist/xterm.js"></script>
-	</head>
-	<body>
-		<div id="terminal"></div>
-		<script>
-			var term = new Terminal();
-			term.open(document.getElementById('terminal'));
-			term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
-		</script>
-	</body>
+  <head>
+    <title>bash</title>
+    <link rel="stylesheet" href="/node_modules/xterm/dist/xterm.css" />
+    <link rel="stylesheet" href="/node_modules/xterm/dist/addons/fullscreen/fullscreen.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+    <script src="/node_modules/xterm/dist/xterm.js"></script>
+    <script src="/node_modules/xterm/dist/addons/fit/fit.js"></script>
+    <script src="/node_modules/xterm/dist/addons/attach/attach.js"></script>
+  </head>
+  <body>
+    <div id="terminal"></div>
+    <script>
+      // No idea what these are about. Just copied them from the demo code
+      Terminal.applyAddon(attach);
+      Terminal.applyAddon(fit);
+      // The terminal
+      const term = new Terminal();
+      // This kinda makes sense
+      const container = document.getElementById('terminal');
+      term.open(container);
+      // Open the websocket connection to the backend
+      const protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
+      const port = location.port ? `:${location.port}` : '';
+      const socketUrl = `${protocol}${location.hostname}${port}/shell`;
+      const socket = new WebSocket(socketUrl);
+      // Attach the socket to the terminal
+      socket.onopen = (ev) => { term.attach(socket); };
+      // Not going to worry about close/error for the websocket
+    </script>
+  </body>
 </html>
