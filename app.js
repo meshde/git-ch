@@ -10,7 +10,7 @@ app.use(express.static(`${__dirname}`));
 // Instantiate shell and set up data handlers
 expressWs.app.ws('/shell', (ws, req) => {
   // Spawn the shell
-  const shell = pty.spawn('docker', ['run', '-it', 'ubuntu'], {
+  const shell = pty.spawn('docker', ['run', '-it', 'git-ch:move-commit-from-branch-a-to-b'], {
     name: 'xterm-color',
     cwd: process.env.PWD,
     env: process.env

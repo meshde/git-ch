@@ -1,0 +1,7 @@
+cd /home/my-repository
+MASTER_DIFF=$(git log --oneline master | diff /usr/bin/master-base.txt - | wc -l)
+FEATURE_DIFF=$(git log --oneline | diff /usr/bin/feature-base.txt - | wc -l)
+
+if [ $MASTER_DIFF -eq 0 -a $FEATURE_DIFF -eq 0 ]; then
+  echo "Congrats You Cleared the Challenge!!!";
+fi
