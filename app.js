@@ -27,6 +27,10 @@ expressWs.app.ws('/shell', (ws, req) => {
   ws.on('message', (msg) => {
     shell.write(msg);
   });
+
+  ws.on('close', () => {
+    shell.write('exit\r');
+  });
 });
 
 // Start the application
