@@ -10,4 +10,4 @@ echo "Please help or my boss is gonna kill me if I fuck up the commit history ag
 echo ""
 echo "NOTE: Be sure to have checked out into your newly created branch for the verficiation process"
 
-PROMPT_COMMAND="/bin/bash /usr/bin/check"
+PROMPT_COMMAND="/bin/bash /usr/bin/check || exit"
