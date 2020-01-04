@@ -1,5 +1,7 @@
 deploy:
   stage: deploy
+  only:
+    - master
   script:
     - mkdir ~/.ssh
     - echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
