@@ -23,7 +23,8 @@
       // Open the websocket connection to the backend
       const protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
       const port = location.port ? `:${location.port}` : '';
-      const socketUrl = `${protocol}${location.hostname}${port}/shell`;
+      const challenge = window.location.hash.substr(1) || 'move-commit-from-branch-a-to-b';
+      const socketUrl = `${protocol}${location.hostname}${port}/${challenge}`;
       const socket = new WebSocket(socketUrl);
       // Attach the socket to the terminal
       socket.onopen = (ev) => { term.attach(socket); };

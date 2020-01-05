@@ -8,12 +8,13 @@ const expressWs = require('express-ws')(app);
 app.use(express.static(`${__dirname}`));
 
 // Instantiate shell and set up data handlers
-expressWs.app.ws('/shell', (ws, req) => {
+expressWs.app.ws('/:challenge', (ws, req) => {
+  const challenge = req.params.challenge;
   // Spawn the shell
   const shell = pty.spawn('docker', [
     'run', '-it', '--rm',
     '--network', 'none',
-    'git-ch:move-commit-from-branch-a-to-b',
+    `git-ch:${challenge}`,
   ], {
     name: 'xterm-color',
     cwd: process.env.PWD,
