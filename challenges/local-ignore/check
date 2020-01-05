@@ -1,0 +1,10 @@
+cd /home/my-repository
+LOG_DIFF=$(git log --oneline | diff /usr/bin/commit-log.txt - | wc -l)
+IGNORED_FILES=$(git check-ignore file_to_be_ignored)
+IGNORE_SRC=$(git check-ignore -v file_to_be_ignored | cut -d ':' -f 1)
+
+if [ $LOG_DIFF -eq 0 -a "$IGNORED_FILES" == "file_to_be_ignored" -a -f file_to_be_ignored -a "$IGNORE_SRC" != ".gitignore" ]; then
+  echo "Congrats You Cleared the Challenge!!!";
+  echo "Exiting...";
+  exit 1;
+fi
