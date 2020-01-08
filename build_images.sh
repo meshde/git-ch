@@ -1,3 +1,3 @@
-for challenge in `ls -1 challenges`; do
-  docker build -t git-ch:${challenge} challenges/${challenge}
+for challenge in `ls -d challenges/*/`; do
+  docker build -f challenges/Dockerfile -t git-ch:`basename ${challenge}` ${challenge}
 done
