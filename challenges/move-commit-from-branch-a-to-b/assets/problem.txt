@@ -1,0 +1,7 @@
+I fucked up git!! Can you help?
+I was asked to create a new feature. I made the initial changes required and committed it.
+Being the clumsy fool that I am, I forgot to create a new branch from master before doing so and directly committed on top of master.
+I wanna fix this by having this new commit on a new branch and want master to got back to what it was before I added this commit.
+Please help or my boss is gonna kill me if I fuck up the commit history again!!!
+
+NOTE: Be sure to have checked out into your newly created branch for the verficiation process
