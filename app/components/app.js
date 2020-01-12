@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import Sidebar from './sidebar';
 import Terminal from './terminal';
+import axios from 'axios';
 
 import './app.css';
 
 class App extends Component {
   constructor() {
     super()
-    this.items = [
-      {
-        label: 'move-commit-from-branch-a-to-b',
-        name: 'move-commit-from-branch-a-to-b'
-      },
-      {
-        label: 'local-ignore',
-        name: 'local-ignore'
-      }
-    ]
-    this.state = { name: this.items[0].name }
+    this.state = { items: [] };
+    this.setChallenges();
   }
+
+  async setChallenges() {
+    const { data: items } = await axios.get('/challenges');
+    this.setState({
+      items,
+      name: items[0].name
+    });
+  }
+
   render() {
 
     const handleClick = (name) => {
@@ -27,7 +28,7 @@ class App extends Component {
 
     return (
       <div>
-        <Sidebar items={this.items} handleClick={handleClick} />
+        <Sidebar items={this.state.items} handleClick={handleClick} />
         <div className="main">
           <Terminal challenge={this.state.name} />
         </div>

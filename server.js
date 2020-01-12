@@ -4,6 +4,12 @@ const pty = require('node-pty');
 const app = express();
 const expressWs = require('express-ws')(app);
 
+const challenges = require('./challenges/index.json');
+
+app.get('/challenges', (req, res) => {
+  res.json(challenges);
+})
+
 // Serve static assets from ./static
 app.use(express.static(`${__dirname}/dist`));
 
