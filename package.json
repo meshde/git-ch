@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "debug": "node --inspect-brk server.js",
+    "dev": "nodemon server.js",
     "watch": "webpack --watch",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,6 +32,7 @@
     "budo": "^11.6.3",
     "css-loader": "^3.4.2",
     "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^2.0.2",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
