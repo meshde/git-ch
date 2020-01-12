@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "watch": "webpack --watch",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +19,8 @@
     "node-pty": "^0.8.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "xterm": "^3.14.5"
+    "xterm": "^3.14.5",
+    "xterm-addon-attach": "^0.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",

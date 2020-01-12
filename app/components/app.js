@@ -1,32 +1,36 @@
 import React, { Component } from "react";
 import Sidebar from './sidebar';
+import Terminal from './terminal';
 
 import style from './app.css';
 
 class App extends Component {
   constructor() {
     super()
-    this.state = { name: 'Not Selected Yet!' }
-  }
-  render() {
-    const items = [
+    this.items = [
       {
-        label: 'meshde',
-        name: 'Mehmood'
+        label: 'move-commit-from-branch-a-to-b',
+        name: 'move-commit-from-branch-a-to-b'
       },
       {
-        label: 'pandey',
-        name: 'Nitin'
+        label: 'local-ignore',
+        name: 'local-ignore'
       }
     ]
+    this.state = { name: this.items[0].name }
+  }
+  render() {
 
     const handleClick = (name) => {
       this.setState({ name });
     }
+
     return (
       <div>
-        <Sidebar items={items} handleClick={handleClick} />
-        <div className={style.main}>{this.state.name}</div>
+        <Sidebar items={this.items} handleClick={handleClick} />
+        <div className={style.main}>
+          <Terminal challenge={this.state.name} />
+        </div>
       </div>
     )
   }
