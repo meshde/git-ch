@@ -6,4 +6,4 @@ deploy:
     - mkdir ~/.ssh
     - echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
-    - ssh -o "StrictHostKeyChecking=no" $SERVER 'bash deploy_setup.sh'
+    - ssh -o "StrictHostKeyChecking=no" $SERVER 'cd ~/git-ch && git pull origin master && bash deploy_setup.sh'
