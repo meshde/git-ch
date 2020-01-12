@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Sidebar from './sidebar';
 import Terminal from './terminal';
 
-import style from './app.css';
+import './app.css';
 
 class App extends Component {
   constructor() {
@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div>
         <Sidebar items={this.items} handleClick={handleClick} />
-        <div className={style.main}>
+        <div className="main">
           <Terminal challenge={this.state.name} />
         </div>
       </div>

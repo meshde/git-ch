@@ -22,13 +22,13 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: "style-loader",
+            options: {
+              injectType: "linkTag"
+            }
           },
           {
-            loader: "css-loader",
-            options: {
-              modules: true
-            },
+            loader: "file-loader",
           }
         ]
       }
