@@ -4,18 +4,53 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.js",
+    "debug": "node --inspect-brk server.js",
+    "dev": "nodemon server.js",
+    "watch": "webpack --watch",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.8.3",
+    "@material-ui/styles": "^4.8.2",
+    "axios": "^0.19.1",
     "express": "^4.17.1",
     "express-ws": "^4.0.0",
     "node-pty": "^0.8.1",
-    "xterm": "^3.14.5"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "xterm": "^3.14.5",
+    "xterm-addon-attach": "^0.4.0"
   },
   "devDependencies": {
-    "budo": "^11.6.3"
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.0",
+    "@babel/preset-react": "^7.8.0",
+    "babel-loader": "^8.0.6",
+    "budo": "^11.6.3",
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^2.0.2",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "10"
+          }
+        }
+      ],
+      "@babel/react"
+    ]
   }
 }
