@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,9 +14,27 @@
     "express": "^4.17.1",
     "express-ws": "^4.0.0",
     "node-pty": "^0.8.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "xterm": "^3.14.5"
   },
   "devDependencies": {
-    "budo": "^11.6.3"
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.0",
+    "@babel/preset-react": "^7.8.0",
+    "babel-loader": "^8.0.6",
+    "budo": "^11.6.3",
+    "css-loader": "^3.4.2",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
   }
 }

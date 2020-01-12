@@ -5,7 +5,7 @@ const app = express();
 const expressWs = require('express-ws')(app);
 
 // Serve static assets from ./static
-app.use(express.static(`${__dirname}`));
+app.use(express.static(`${__dirname}/dist`));
 
 // Instantiate shell and set up data handlers
 expressWs.app.ws('/:challenge', (ws, req) => {
