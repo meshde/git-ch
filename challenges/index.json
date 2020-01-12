@@ -1,0 +1,10 @@
+[
+  {
+    "name": "move-commit-from-branch-a-to-b",
+    "label": "Move a commit from one branch to another"
+  },
+  {
+    "name": "local-ignore",
+    "label": "Ignore files from git only for your machine"
+  }
+]
