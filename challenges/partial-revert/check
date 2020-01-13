@@ -1,0 +1,9 @@
+cd /home/my-repository
+CHANGES_TO_BE_REVERTED_DIFF=$(git show -U0 | grep "Changes to be reverted" | wc -l)
+CHANGES_TO_BE_KEPT_DIFF=$(git show -U0 | grep "Changes to be kept" | wc -l)
+
+LOG_DIFF=$(git log --oneline HEAD~1 | diff /usr/bin/base-log.txt - | wc -l)
+
+if [ $CHANGES_TO_BE_REVERTED_DIFF -eq 2 -a $CHANGES_TO_BE_KEPT_DIFF -eq 0 -a $LOG_DIFF -eq 0 ]; then
+  exit 1;
+fi

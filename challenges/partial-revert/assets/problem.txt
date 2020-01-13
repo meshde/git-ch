@@ -1,0 +1,15 @@
+My last commit made a few changes to a very complicated set of functions and everything was working fine.
+But the business requirement has changed now and apparently we only want some
+of the changes made in the last commit and want to discard the rest.
+My teammates expect me to do so without modifying the existing commit history
+(in case the requirements change again and we want to go back).
+Now the codebase is highly complex without any sort of test cases written and I
+am shit scared to make the changes manually. Due to the urgency of the matter I
+will not be able to manually test every possible case.
+
+I definitely want to add a new commit that just partially reverts the last commit.
+
+NOTE: The changes that need to be reverted/kept have been marked so in the
+comments in file.py. Please revert the changes that include the comment
+"Changes to be reverted".
+

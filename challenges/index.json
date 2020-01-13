@@ -6,5 +6,9 @@
   {
     "name": "local-ignore",
     "label": "Ignore files from git only for your machine"
+  },
+  {
+    "name": "partial-revert",
+    "label": "Partially revert the last commit"
   }
 ]
