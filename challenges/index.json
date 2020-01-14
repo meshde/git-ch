@@ -10,5 +10,9 @@
   {
     "name": "partial-revert",
     "label": "Partially revert the last commit"
+  },
+  {
+    "name": "delete-commits",
+    "label": "Delete bunch of commits in the middle of history"
   }
 ]

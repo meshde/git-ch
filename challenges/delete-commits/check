@@ -1,0 +1,6 @@
+cd /home/my-repository
+LOG_DIFF=$(git log --oneline | cut -d ' ' -f 2- | diff /usr/bin/log.txt - | wc -l)
+
+if [ $LOG_DIFF -eq 0 ]; then
+  exit 1;
+fi
