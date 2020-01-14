@@ -1,0 +1,4 @@
+I seem to have added two empty commits in between my commit history.
+Could you help me delete them without affecting the rest of the commits?
+
+NOTE: Neither commits before the empty commits nor those after should change, although it is okay for the commits after the empty ones to have their SHA changed.
