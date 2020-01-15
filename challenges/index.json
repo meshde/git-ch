@@ -14,5 +14,9 @@
   {
     "name": "delete-commits",
     "label": "Delete bunch of commits in the middle of history"
+  },
+  {
+    "name": "recover-deleted-commit",
+    "label": "Recover accidentally deleted commit"
   }
 ]

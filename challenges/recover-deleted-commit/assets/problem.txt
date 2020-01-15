@@ -1,0 +1,6 @@
+I was playing around with git in my repo and I accidentally deleted the most recent commit,
+which sadly was not pushed upstream yet.
+
+Could you help me recover the lost commit?
+
+NOTE: The lost commit has the message "Second Commit"
