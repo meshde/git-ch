@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { Terminal } from 'xterm';
 import { AttachAddon } from 'xterm-addon-attach';
+import * as fit from 'xterm/dist/addons/fit/fit';
 import 'xterm/dist/xterm.css';
+
+Terminal.applyAddon(fit);
 
 export default class GitTerminal extends Component {
   constructor(props) {
@@ -28,6 +31,7 @@ export default class GitTerminal extends Component {
   }
 
   createSocket() {
+    this.term.fit();
     this.socket = new WebSocket(this.socketUrl);
     this.socket.onopen = (ev) => { this.term.loadAddon(new AttachAddon(this.socket)); }
   }
@@ -57,7 +61,7 @@ export default class GitTerminal extends Component {
 
   render() {
     return (
-      <div id="terminal" />
+      <div id="terminal" style={{height: '100%'}}/>
     );
   }
 }
