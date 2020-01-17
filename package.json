@@ -7,7 +7,7 @@
     "start": "node server.js",
     "debug": "node --inspect-brk server.js",
     "dev": "nodemon server.js",
-    "watch": "webpack --watch",
+    "watch": "webpack --watch --mode=development --devtool=inline-source-map",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
